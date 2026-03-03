@@ -1,4 +1,4 @@
-# Final Project - Workout Tracer
+# Final Project - Workout Tracker
 
 A fitness tracking web application built with React and Express/MongoDB. Users can log workouts, track exercises, and view their training history grouped by date.
 
