@@ -83,8 +83,8 @@ export function Workout({ id, workout, fetchData }) {
           // view mode — just display the data
           <div className='workout__info'>
             <strong>{workout.exercise}</strong>
-            <span>{workout.sets} x {workout.reps} @ {workout.weight}lbs</span>
-            <span className='workout__category'>{workout.category}</span>
+            <span> — {workout.sets} x {workout.reps} @ {workout.weight}lbs</span>
+            <span style={{ textTransform: 'capitalize' }}> | {workout.category}</span>
             {workout.notes && <p className='workout__notes'>{workout.notes}</p>}
           </div>
         )}
