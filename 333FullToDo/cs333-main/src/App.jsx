@@ -1,20 +1,13 @@
+import Workouts from './components/Workouts/Workouts'
 
-import Todos from './components/Todos/Todos'
-
-/**
- * The main component of the application.
- * Renders the Todos component inside a div with the class name 'app'.
- *
- * @returns {JSX.Element} The rendered component.
- */
 function App() {
   return (
-    <div className='app'> {/* className important */}
-      <section className='todos'> {/* className important */}
+    <div className='app'>
+      <section className='workouts'>
         <header>
-          <h1>To-Do List</h1>
+          <h1>Workout Tracker</h1>
         </header>
-        <Todos />
+        <Workouts />
       </section>
     </div>
   )
