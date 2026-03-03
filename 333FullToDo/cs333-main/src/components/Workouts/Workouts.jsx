@@ -49,6 +49,10 @@ const Workouts = () => {
     fetchData()
   }, [fetchData])
 
+  // group workouts by date and sort dates newest to oldest
+  const grouped = groupByDate(workouts)
+  const sortedDates = Object.keys(grouped).sort().reverse()
+
   return (
     <>
       <CreateWorkout handleCreate={handleCreate} />
