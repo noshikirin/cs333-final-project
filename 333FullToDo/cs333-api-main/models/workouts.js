@@ -1,16 +1,29 @@
 import mongoose from 'mongoose'
 
 let WorkoutSchema = new mongoose.Schema({
-  exercise: { type: String, required: true }, // name of the exercise like "Bench Press"
-  sets: { type: Number, required: true }, // number of sets  
-  reps: { type: Number, required: true }, // number of reps per set
-  weight: { type: Number, required: true }, // weight for exercise in pounds
-  category: { type: String, default: 'other' }, // category of exercise like "upper body", "lower body", "cardio", etc.
-  date: { type: String, required: true }, // date of the workout in ISO format (e.g., "2026-03-01T12:00:00Z")
-  notes: { type: String, default: '' }, // optional notes about the workout, like "Felt strong today!" or "Struggled with the last set."
-}, {
-  timestamps: true // automatically adds createdAt and updatedAt fields
-})
+  exercise: { type: String, required: true },
+  category: { type: String, default: 'other' },
+  date: { type: String, required: true },
+  notes: { type: String, default: '' },
+
+  // standard fields (optional now — not used for cardio)
+  sets: { type: Number, default: null },
+  reps: { type: Number, default: null },
+  weight: { type: Number, default: null },
+
+  // cardio fields
+  duration: { type: Number, default: null },  // minutes
+  distance: { type: Number, default: null },  // miles
+
+  // unilateral fields
+  isUnilateral: { type: Boolean, default: false },
+  leftSets: { type: Number, default: null },
+  leftReps: { type: Number, default: null },
+  leftWeight: { type: Number, default: null },
+  rightSets: { type: Number, default: null },
+  rightReps: { type: Number, default: null },
+  rightWeight: { type: Number, default: null },
+}, { timestamps: true })
 
 export const Workout = mongoose.model('Workout', WorkoutSchema)
 
