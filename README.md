@@ -35,36 +35,32 @@ This project was adapted from a ToDo app skeleton provided in CS 333. The core C
 
 ### Steps to Deploy
 
-1. **Upload files** to the server via WinSCP to `/var/www/html/final`
+1. **Upload files** to the server via WinSCP
 
-2. **SSH into the server:**
-   ```
-   ssh felicity@149.165.155.132
-   ```
+2. **SSH into the server**
 
 3. **Install backend dependencies:**
-   ```
+```
    cd /var/www/html/final/cs333-api-main
    npm install
-   ```
+```
 
 4. **Install frontend dependencies and build:**
-   ```
+```
    cd /var/www/html/final/cs333-main
    npm install
    npm run build
-   ```
+```
 
 5. **Start/restart the backend with PM2:**
-   ```
+```
    cd /var/www/html/final/cs333-api-main
    pm2 start index.js --name workout-api
-   ```
+```
    Or if already running:
-   ```
+```
    pm2 restart workout-api
-   ```
-
+```
 ### Running Locally
 
 1. Start the backend:
