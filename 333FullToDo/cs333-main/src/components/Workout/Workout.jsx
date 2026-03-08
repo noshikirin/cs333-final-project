@@ -29,7 +29,7 @@ export function Workout({ id, workout, fetchData, isPR }) {
 
   async function handleUpdate(updatedFields) {
     try {
-      await fetch(`http://localhost:3000/${id}`, {
+      await fetch(`/api/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedFields),
@@ -71,7 +71,7 @@ export function Workout({ id, workout, fetchData, isPR }) {
 
   async function handleDelete() {
     try {
-      await fetch(`http://localhost:3000/${id}`, {
+      await fetch(`/api/${id}`, {
         method: 'DELETE',
       })
       await fetchData()

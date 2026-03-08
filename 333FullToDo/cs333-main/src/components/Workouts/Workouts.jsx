@@ -94,7 +94,7 @@ const Workouts = () => {
   // grabs all workouts from the API
   const fetchData = useCallback(async () => {
     try {
-      const response = await fetch('http://localhost:3000')
+      const response = await fetch('/api/')
       const jsonResponse = await response.json()
       setWorkouts(jsonResponse)
     } catch (error) {
@@ -105,7 +105,7 @@ const Workouts = () => {
   // sends the new workout to the API, then refetches so the list updates
   const handleCreate = useCallback(async (newWorkout) => {
     try {
-      await fetch("http://localhost:3000", {
+      await fetch("/api/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newWorkout),
